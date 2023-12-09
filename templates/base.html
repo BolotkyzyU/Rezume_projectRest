@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Live Resume :: Home</title>
+    <link href="https://fonts.googleapis.com/css?family=Mukta:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/vendors/@fortawesome/fontawesome-free/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/live-resume.css' %}">
+</head>
+
+<body>
+    <header>
+        <button class="btn btn-white btn-share ml-auto mr-3 ml-md-0 mr-md-auto"><img src="{% static 'assets/images/share.svg' %}" alt="share" class="btn-img">
+            SHARE</button>
+        <nav class="collapsible-nav" id="collapsible-nav">
+            <a href="{% url 'index' %}" class="nav-link active">HOME</a>
+            <a href="{% url 'resume' %}" class="nav-link">RESUME</a>
+            <a href="{% url 'portfolio' %}" class="nav-link">PORTFOLIO</a>
+            <a href="{% url 'blog' %}" class="nav-link">BLOG</a>
+            <a href="{% url 'contact' %}" class="nav-link">CONTACT</a>
+        </nav>
+        <button class="btn btn-menu-toggle btn-white rounded-circle" data-toggle="collapsible-nav"
+            data-target="collapsible-nav"><img src="{% static 'assets/images/hamburger.svg' %}" alt="hamburger"></button>
+    </header>
+    <div class="content-wrapper">
+        <aside>
+            <div class="profile-img-wrapper">
+                <img src="{% static 'assets/images/4.jpg' %}" alt="profile">
+            </div>
+            <h1 class="profile-name">Bolot kyzy Uluksat</h1>
+            <div class="text-center">
+                <span class="badge badge-white badge-pill profile-designation">IT developer</span>
+            </div>
+            <nav class="social-links">
+                <a href="#!" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#!" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#!" class="social-link"><i class="fab fa-behance"></i></a>
+                <a href="#!" class="social-link"><i class="fab fa-dribbble"></i></a>
+                <a href="#!" class="social-link"><i class="fab fa-github"></i></a>
+            </nav>
+            <div class="widget">
+                <h5 class="widget-title">personal information</h5>
+                <div class="widget-content">
+                    <p>BIRTHDAY : 19 December 1995</p>
+                    <p>WEBSITE : www.example.com</p>
+                    <p>PHONE : +1 123 000 4444</p>
+                    <h>MAIL : bolotkyzy.uluksat@gmail.com</h>
+                    <p>Location : Kyrgyztan, Osh</p>
+                    <button id="captureButton" class="btn btn-download-cv btn-primary rounded-pill"> <img src="{% static 'assets/images/download.svg' %}" alt="download"
+                        class="btn-img"><a href="{% url 'download_resume' %}">DOWNLOAD CV</a></button>
+                </div>
+            </div>
+            <div class="widget card">
+                <div class="card-body">
+                    <div class="widget-content">
+                        <h5 class="widget-title card-title">LANGUAGES</h5>
+                        <p>Kyrgyz : native</p>
+                        <p>Russian : fluent</p>
+                        <p>English : middle</p>
+                        <p>Turkish : middle</p>
+                    </div>
+                </div>
+            </div>
+            <div class="widget card">
+                <div class="card-body">
+                    <div class="widget-content">
+                        <h5 class="widget-title card-title">INTERESTS</h5>
+                        <p>Photographing</p>
+                        <p>Bisness</p>
+                        <p>Sport</p>
+                        <p>Reading</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        {% block content %}
+        {% endblock %}
+    </div>
+    <script src="{% static 'assets/vendors/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/@popperjs/core/dist/umd/popper-base.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/live-resume.js' %}"></script>
+    
+</body>
+
+</html>
